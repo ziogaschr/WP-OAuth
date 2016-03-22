@@ -966,7 +966,47 @@
 			</div> <!-- .form-padding -->
 			</div> <!-- .wpoa-settings-section -->
 			<!-- END Login with Battle.net section -->
-			
+
+      <!-- START Login with Authentiq section -->
+      <div id="wpoa-settings-section-login-with-authentiq" class="wpoa-settings-section">
+      <h3>Login with Authentiq</h3>
+      <div class='form-padding'>
+      <table class='form-table'>
+        <tr valign='top'>
+        <th scope='row'>Enabled:</th>
+        <td>
+          <input type='checkbox' name='wpoa_authentiq_api_enabled' value='1' <?php checked(get_option('wpoa_authentiq_api_enabled') == 1); ?> />
+        </td>
+        </tr>
+
+        <tr valign='top'>
+        <th scope='row'>Client ID:</th>
+        <td>
+          <input type='text' name='wpoa_authentiq_api_id' value='<?php echo get_option('wpoa_authentiq_api_id'); ?>' />
+        </td>
+        </tr>
+
+        <tr valign='top'>
+        <th scope='row'>Client Secret:</th>
+        <td>
+          <input type='text' name='wpoa_authentiq_api_secret' value='<?php echo get_option('wpoa_authentiq_api_secret'); ?>' />
+        </td>
+        </tr>
+      </table> <!-- .form-table -->
+      <p>
+        <strong>Instructions:</strong>
+        <ol>
+          <li>Register as an Authentiq Developer at <a href='https://developers.authentiq.com/' target="_blank">developers.authentiq.com</a>.</li>
+          <li>At Authentiq, create a new App. This will enable your site to access the Authentiq API.</li>
+          <li>At Authentiq, provide your site's homepage URL (<?php echo $blog_url; ?>) for the new App's Redirect URI. Don't forget the trailing slash!</li>
+          <li>Paste your API Key/Secret provided by Authentiq into the fields above, then click the Save all settings button.</li>
+        </ol>
+      </p>
+      <?php submit_button('Save all settings'); ?>
+      </div> <!-- .form-padding -->
+      </div> <!-- .wpoa-settings-section -->
+      <!-- END Login with Authentiq section -->
+
 			<!-- START Back Channel Configuration section -->
 			<div id="wpoa-settings-section-back-channel=configuration" class="wpoa-settings-section">
 			<h3>Back Channel Configuration</h3>

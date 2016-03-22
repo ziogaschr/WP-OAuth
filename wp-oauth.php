@@ -3,7 +3,7 @@
 /*
 Plugin Name: WP-OAuth
 Plugin URI: http://github.com/perrybutler/wp-oauth
-Description: A WordPress plugin that allows users to login or register by authenticating with an existing Google, Facebook, LinkedIn, Github, Reddit or Windows Live account via OAuth 2.0. Easily drops into new or existing sites, integrates with existing users.
+Description: A WordPress plugin that allows users to login or register by authenticating with an existing Google, Facebook, LinkedIn, Github, Reddit, Windows Live or Authentiq account via OAuth 2.0. Easily drops into new or existing sites, integrates with existing users.
 Version: 0.4.1
 Author: Perry Butler
 Author URI: http://glassocean.net
@@ -113,6 +113,9 @@ Class WPOA {
 		'wpoa_battlenet_api_id' => '',									// any string
 		'wpoa_battlenet_api_secret' => '',
 																		// any string
+		'wpoa_authentiq_api_enabled' => 0,							// 0, 1
+		'wpoa_authentiq_api_id' => '',									// any string
+		'wpoa_authentiq_api_secret' => '',							// any string
 		'wpoa_oauth_server_api_enabled' => 0,							// 0, 1
 		'wpoa_oauth_server_api_id' => '',								// any string
 		'wpoa_oauth_server_api_secret' => '',							// any string
@@ -732,6 +735,7 @@ Class WPOA {
 		$html .= $this->wpoa_login_button("paypal", "PayPal", $atts);
 		$html .= $this->wpoa_login_button("instagram", "Instagram", $atts);
 		$html .= $this->wpoa_login_button("battlenet", "Battlenet", $atts);
+		$html .= $this->wpoa_login_button("authentiq", "Authentiq", $atts);
 		$html .= $this->wpoa_login_button( 'oauth_server' , get_option( 'wpoa_oauth_server_api_button_text' ), $atts );
 		if ($html == '') {
 			$html .= 'Sorry, no login providers have been enabled.';
